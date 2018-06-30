@@ -1,0 +1,30 @@
+{
+  "name": "netlify-forms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "mkdirp dist/client/",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "ncp src/client/ dist/client/",
+    "build:server": "netlify-lambda build src/server/functions/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbmoelker/netlify-forms.git"
+  },
+  "keywords": [],
+  "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbmoelker/netlify-forms/issues"
+  },
+  "homepage": "https://github.com/jbmoelker/netlify-forms#readme",
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "netlify-lambda": "^0.4.0"
+  }
+}
